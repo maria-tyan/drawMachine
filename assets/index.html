@@ -19,25 +19,54 @@
         <section class="main-block">
             <div class="content-block">
                 <h1>DrawMachine </h1>
-                <canvas class="canvas js-canvas" id="canvas" width="960" height="500">
-                </canvas>
-                <div class="btn-style draw-rect js-draw-rect">
-                    <span>Прямоугольник</span>
+                <div class="canvas-wrap">
+                    <canvas class="canvas js-canvas" id="canvas" width="960" height="500">
+                    </canvas>
+                    <div class="canvas-mouse-ev js-canvas-mouse-ev">
+                    </div>
                 </div>
-                <div class="btn-style draw-arrow js-draw-arrow">
-                    <span>Стрелка</span>
-                </div>
-                <div class="btn-style draw-line js-draw-line">
-                    <span>Линия</span>
-                </div>
-                <div class="btn-style draw-circle js-draw-circle">
-                    <span>Круг</span>
+                <div class="btn-wrap">
+                    <div class="btn-style draw-pen js-draw-pen">
+                        <span>Кисть</span>
+                    </div>
+                    <div class="btn-style draw-erraser js-draw-erraser">
+                        <span>Стерка</span>
+                    </div>
+                    <div class="btn-style draw-rect js-draw-rect">
+                        <span>Прямоугольник</span>
+                    </div>
+                    <div class="btn-style draw-arrow js-draw-arrow">
+                        <span>Стрелка</span>
+                    </div>
+                    <div class="btn-style draw-line js-draw-line">
+                        <span>Линия</span>
+                    </div>
+                    <div class="btn-style draw-circle js-draw-circle">
+                        <span>Круг</span>
+                    </div>
+                    <div class="btn-style draw-text js-draw-text">
+                        <span>Текст</span>
+                    </div>
+                    <div class="input-wrap">
+                        <span>Размер</span>
+                        <input class="size js-size" type="range" min="1"
+                            max="15" step="1" value="1" onchange="updateSize(this.value)"
+                        />
+                    </div>
+                    <div class="input-wrap">
+                        <span>Цвет</span>
+                        <input class="js-color jscolor" name="color2"
+                            id="value" value="99cc00" onchange="update(this.jscolor)"
+                            type="text" />
+                    </div>
                 </div>
             </div>
         </section>
     </div>
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/jcanvas.min.js"></script>
+    <script src="js/jscolor.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
     <script src="js/main.js"></script>
 </body>
 

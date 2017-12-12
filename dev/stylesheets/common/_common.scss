@@ -117,6 +117,10 @@ p {
     }
 }
 
+.btn-wrap {
+    display: flex;
+}
+
 .btn-style {
     position: relative;
     display: inline-block;
@@ -139,8 +143,8 @@ p {
         position: relative;
         overflow: hidden;
         font-family: Gilroy;
-        font-size: 16px;
-        font-weight: 700;
+        font-size: 14px;
+        font-weight: 400;
         line-height: 43px;
         text-transform: uppercase;
         line-height: 49px;

@@ -2,12 +2,28 @@
     .content-block
         h1 DrawMachine      
 
-        +b.CANVAS#canvas.canvas.js-canvas(width='960', height='500')
-        +b.btn-style.draw-rect.js-draw-rect
-            span Прямоугольник
-        +b.btn-style.draw-arrow.js-draw-arrow
-            span Стрелка
-        +b.btn-style.draw-line.js-draw-line
-            span Линия
-        +b.btn-style.draw-circle.js-draw-circle
-            span Круг
+        +b.canvas-wrap
+            +b.CANVAS#canvas.canvas.js-canvas(width='960', height='500')
+            +b.canvas-mouse-ev.js-canvas-mouse-ev
+
+        +b.btn-wrap
+            +b.btn-style.draw-pen.js-draw-pen
+                span Кисть
+            +b.btn-style.draw-erraser.js-draw-erraser
+                span Стерка
+            +b.btn-style.draw-rect.js-draw-rect
+                span Прямоугольник
+            +b.btn-style.draw-arrow.js-draw-arrow
+                span Стрелка
+            +b.btn-style.draw-line.js-draw-line
+                span Линия
+            +b.btn-style.draw-circle.js-draw-circle
+                span Круг
+            +b.btn-style.draw-text.js-draw-text
+                span Текст
+            +b.input-wrap
+                span Размер
+                +b.INPUT.size.js-size(type="range" min="1" max="15" step="1" value="1" onchange="updateSize(this.value)")
+            +b.input-wrap
+                span Цвет
+                +b.INPUT.js-color.jscolor(name="color2" id="value" value="99cc00" onchange="update(this.jscolor)")
