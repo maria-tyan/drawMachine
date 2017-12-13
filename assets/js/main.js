@@ -70,27 +70,12 @@ $erraserBtn.click(function() {
 
 $textBtn.click(function() {
   action = 'text';
-  console.log(action)
 })
 
 function getSize() {
   cnsEvent.width = Math.abs(cnsEvent.x1 - cnsEvent.x0);
   cnsEvent.height = Math.abs(cnsEvent.y1 - cnsEvent.y0);
 }
-
-// function actionLetter(color, x0, y0, x1, y1, letter) {
-//   $myCanvas.drawText({
-//     fillStyle: color,
-//     fontStyle: 'book',
-//     fontSize: '125pt',
-//     fontFamily: 'Trebuchet MS, sans-serif',
-//     text: letter,
-//     x: x0,
-//     y: y0,
-//     align: 'left',
-//     respectAlign: true,
-//   });
-// }
 
 function actionErraser(evnt) {
   cnsEvent.x0 = cnsEvent.x1;
@@ -111,7 +96,6 @@ function actionPen(evnt) {
 }
 
 function actionText(evnt) {
-  
   actionLetter(cnsEvent.color, cnsEvent.x0, cnsEvent.y0, cnsEvent.x1, cnsEvent.y1, cnsEvent.buf);
 }
 
@@ -143,7 +127,6 @@ function erraserFinish() {
 }
 
 function textFinish() {
-  // cnsEvent.text = false;
 }
 
 function actionRect(color, x0, y0, width, height) {
