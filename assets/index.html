@@ -26,38 +26,48 @@
                     </div>
                 </div>
                 <div class="btn-wrap">
-                    <div class="btn-style draw-pen js-draw-pen">
-                        <span>Кисть</span>
+                    <div class="btn-style draw-pen js-draw-pen _active">
+                        <span>
+                            <i class="fa fa-paint-brush"></i>
+                        </span>
                     </div>
                     <div class="btn-style draw-erraser js-draw-erraser">
-                        <span>Стерка</span>
+                        <span>
+                            <i class="fa fa-eraser"></i>
+                        </span>
                     </div>
                     <div class="btn-style draw-rect js-draw-rect">
-                        <span>Прямоугольник</span>
+                        <span>
+                            <i class="fa fa-square"></i>
+                        </span>
                     </div>
                     <div class="btn-style draw-arrow js-draw-arrow">
-                        <span>Стрелка</span>
+                        <span>
+                            <i class="fa fa-long-arrow-right"></i>
+                        </span>
                     </div>
                     <div class="btn-style draw-line js-draw-line">
-                        <span>Линия</span>
+                        <span>
+                            <i class="fa fa-minus"></i>
+                        </span>
                     </div>
                     <div class="btn-style draw-circle js-draw-circle">
-                        <span>Круг</span>
+                        <span>
+                            <i class="fa fa-circle"></i>
+                        </span>
                     </div>
                     <div class="btn-style draw-text js-draw-text">
-                        <span>Текст</span>
+                        <span>
+                            <i class="fa fa-font"></i>
+                        </span>
                     </div>
                     <div class="input-wrap">
-                        <span>Размер</span>
-                        <input class="size js-size" type="range" min="1"
-                            max="15" step="1" value="1" onchange="updateSize(this.value)"
-                        />
+                        <input class="size js-size" type="range" min="1" max="15" step="1"
+                            value="1" onchange="updateSize(this.value)" />
                     </div>
                     <div class="input-wrap">
-                        <span>Цвет</span>
-                        <input class="js-color jscolor" name="color2"
-                            id="value" value="99cc00" onchange="update(this.jscolor)"
-                            type="text" />
+                        <input class="js-color jscolor" name="color2" id="value" value="99cc00"
+                            onchange="update(this.jscolor)" type="text" />
                     </div>
                 </div>
             </div>

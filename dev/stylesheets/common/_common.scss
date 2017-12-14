@@ -34,7 +34,7 @@ body {
     min-width: 960px;
     overflow-x: hidden;
     font-family: "Open Sans";
-    color: $black;
+    color: $white;
     text-align: center;
     background-color: $blue;
 }
@@ -167,7 +167,8 @@ p {
         display: block;
     }
 
-    &:hover {
+    &:hover,
+    &._active {
         background-color: $light-blue;
     }
 

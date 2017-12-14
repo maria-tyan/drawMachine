@@ -7,23 +7,37 @@
             +b.canvas-mouse-ev.js-canvas-mouse-ev
 
         +b.btn-wrap
-            +b.btn-style.draw-pen.js-draw-pen
-                span Кисть
+            +b.btn-style.draw-pen.js-draw-pen(class=" _active")
+                span 
+                    i.fa.fa-paint-brush
+                //- Кисть
             +b.btn-style.draw-erraser.js-draw-erraser
-                span Стерка
+                span 
+                    i.fa.fa-eraser
+                //- Стерка
             +b.btn-style.draw-rect.js-draw-rect
-                span Прямоугольник
+                span 
+                    i.fa.fa-square
+                //- Прямоугольник
             +b.btn-style.draw-arrow.js-draw-arrow
-                span Стрелка
+                span 
+                    i.fa.fa-long-arrow-right
+                //- Стрелка
             +b.btn-style.draw-line.js-draw-line
-                span Линия
+                span 
+                    i.fa.fa-minus
+                //- Линия
             +b.btn-style.draw-circle.js-draw-circle
-                span Круг
+                span 
+                    i.fa.fa-circle
+                //-  Круг
             +b.btn-style.draw-text.js-draw-text
-                span Текст
+                span 
+                    i.fa.fa-font
+                //- Текст
             +b.input-wrap
-                span Размер
+                //- span Размер
                 +b.INPUT.size.js-size(type="range" min="1" max="15" step="1" value="1" onchange="updateSize(this.value)")
             +b.input-wrap
-                span Цвет
+                //- span Цвет
                 +b.INPUT.js-color.jscolor(name="color2" id="value" value="99cc00" onchange="update(this.jscolor)")

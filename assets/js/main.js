@@ -9,7 +9,6 @@ var $erraserBtn = $('.js-draw-erraser');
 var $textBtn = $('.js-draw-text');
 var $cnvMouseEv = $('.js-canvas-mouse-ev');
 var action = 'pen';
-var size = 1;
 var width = $myCanvas.width();
 var height = $myCanvas.height();
 var cnsEvent = {};
@@ -17,6 +16,7 @@ cnsEvent.pen = false;
 cnsEvent.erraser = false;
 cnsEvent.text = false;
 cnsEvent.color = '#99cc00';
+cnsEvent.size = 1;
 var canvasPosition = $myCanvas.offset();
 
 
@@ -32,7 +32,7 @@ function update(jscolor) {
 }
 
 function updateSize(val) {
-  size =  val;
+  cnsEvent.size =  val;
 }
 
 $myCanvas.drawRect({
@@ -44,32 +44,44 @@ $myCanvas.drawRect({
   height: height
 });
 
+function btnActivate(item) {
+  $('.btn-style').removeClass('_active');
+  item.addClass('_active');
+}
+
 $rectBtn.click(function() {
   action = 'rectangle';
+  btnActivate($(this));
 })
 
 $arrowBtn.click(function() {
   action = 'arrow';
+  btnActivate($(this));
 })
 
 $circleBtn.click(function() {
   action = 'circle';
+  btnActivate($(this));
 })
 
 $lineBtn.click(function() {
   action = 'line';
+  btnActivate($(this));
 })
 
 $penBtn.click(function() {
   action = 'pen';
+  btnActivate($(this));
 })
 
 $erraserBtn.click(function() {
   action = 'erraser';
+  btnActivate($(this));
 })
 
 $textBtn.click(function() {
   action = 'text';
+  btnActivate($(this));
 })
 
 function getSize() {
@@ -177,7 +189,7 @@ function initListeners() {
   socket.on('arrow', function(cnsEvent) {
     $myCanvas.drawLine({
       strokeStyle: cnsEvent.color,
-      strokeWidth: size,
+      strokeWidth: cnsEvent.size,
       rounded: true,
       startArrow: true,
       arrowRadius: 15,
@@ -192,7 +204,7 @@ function initListeners() {
   socket.on('line', function(cnsEvent) {
     $myCanvas.drawLine({
       strokeStyle: cnsEvent.color,
-      strokeWidth: size,
+      strokeWidth: cnsEvent.size,
       rounded: true,
       layer: true,
       x1: cnsEvent.x0,
@@ -205,7 +217,7 @@ function initListeners() {
   socket.on('text', function(cnsEvent) {
     $myCanvas.drawText({
       fillStyle: cnsEvent.color,
-      fontSize: '25pt',
+      fontSize: (10 + cnsEvent.size) + 'pt',
       fontFamily: 'Trebuchet MS, sans-serif',
       text: cnsEvent.buf,
       x: cnsEvent.x0,
